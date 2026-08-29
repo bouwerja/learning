@@ -4,6 +4,17 @@ Welcome to my personal learning laboratory! This repository tracks my hands-on j
 
 ---
 
+## 💻 Current Project & Progress
+
+Here I outline the development process that I follow for each project that I am currently busy with.
+
+- [ ] Step 1: Requirements Gathering & System Architecture Design
+- [ ] Step 2: Environment Setup, Boilerplate Configuration & Dependency Management
+- [ ] Step 3: Core Feature Implementation & Database Integration
+- [ ] Step 4: Testing, Refactoring, & Documentation
+
+---
+
 ## 🛠️ Tech Stack & Directory Breakdown
 
 ```
@@ -76,14 +87,3 @@ Understanding classic and modern web development using server-side scripting.
 3. **Data & Scripting:** Gain proficiency in data wrangling with Jupyter Notebooks while automating tedious tasks using Python scripts.
 4. **Code Quality:** Maintain clean commit histories, well-documented code, and structured project layouts across all languages.
 5. **Frontend Development:** Backend is nice but most of the time data is gather from a frontend interaction.
-
----
-
-## 💻 Current Project & Progress
-
-Here I outline the development process that I follow for each project that I am currently busy with.
-
-- [ ] Step 1: Requirements Gathering & System Architecture Design
-- [ ] Step 2: Environment Setup, Boilerplate Configuration & Dependency Management
-- [ ] Step 3: Core Feature Implementation & Database Integration
-- [ ] Step 4: Testing, Refactoring, & Documentation
