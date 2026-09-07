@@ -329,12 +329,7 @@ Assuming `x = 5`:
 
 ## Conditional
 
-Here is a concise summary of the selected text:
-
-### Overview of JavaScript Conditionals
-
 Conditional statements execute different blocks of code based on whether a specified condition evaluates to `true` or `false`.
-
 
 **`if` Statement**
 Executes a block of code if a condition is `true`.
@@ -492,8 +487,6 @@ loop1: for (let j = 1; j < 5; j++) {
 
 This code will set `text` to **`"12121212"`**.
 
-Here is how it behaves step-by-step:
-
 * **Outer Loop (`j = 1`):**
 * `i = 1`: `i === 3` is false. Appends `"1"` to `text` (`text = "1"`).
 * `i = 2`: `i === 3` is false. Appends `"2"` to `text` (`text = "12"`).
@@ -507,4 +500,84 @@ Because the outer loop runs 4 times in total (for `j = 1, 2, 3, 4`), `"12"` is a
 --- 
 
 # JavaScirpt Strings
+
+Strings are for storing text values.
+
+**Quotes**
+```js
+let text_one = "";
+let text_two = "One";
+let text_three = "Four";
+```
+
+**Quotes inside Quotes**
+```JS
+let answer_one = "It's alright";
+let answer_two = "He is called 'Johnny'";
+```
+
+**Template Strings**
+Templates are strings enclosed in backticks.
+They allow single or double quotes.
+```js
+let text = `He's often called "Johnny"`;
+```
+
+* **Interpolation**
+*Template Strings* allow variables in strings.
+
+```js
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}`;
+```
+
+* **Expression Substitution**
+interpolation of expressions in strings
+```JS
+let price = 10;
+let vat = 0.25;
+
+let total = `Total: ${(price * (1+ vat)).toFixed(2)}`;
+```
+
+* **HTML Templates**
+```JS
+let header = "Template Strings";
+let tags = ["template strings", "javascript", "es6"];
+
+let html = `<h2>${header}</h2><ul>`;
+for (const x of tags) {
+  html += `<li>${x}</li>`;
+}
+
+html += `</ul>`;
+```
+
+**String length**
+```js
+let text = "123456qwerty";
+let length = text.lenght;
+```
+
+**Escape Characters**
+```JS
+let text = "We are the so-called \"Vikings\" from the north."; 
+
+let text= 'It\'s alright.';
+
+let text = "The character \\ is called backslash.";
+```
+
+|Code|Result|
+|----|------|
+|`\b`|Backspace|
+|`\f`|Form Feed|
+|`\n`|New Line|
+|`\r`|Carriage Return|
+|`\t`|Horizontal Tabulator|
+|`\v`|Vertical Tabulator|
+
+[String Methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)
 
