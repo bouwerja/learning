@@ -401,3 +401,110 @@ text = (age_var_two < 18) ? "Minor" : "Adult"; // sets text equal to Minor
 ---
 
 # JavaScript Loops
+
+**for loop**
+```JS
+const cars = ["BMW", "Toyota", "Volvo", "Audi"];
+
+for (let i = 0; i < cars.lenght; i++) {
+    text += cars[i] + "<br>";
+}
+```
+
+**while loop**
+```JS
+let i = 0;
+
+while (i < 10) {
+    text += "The number is " + i;
+    i++;
+}
+```
+
+**`break`**
+The `break` statement "jumps out" of loops and switches.
+
+```JS
+for (let i = 0; i < 10; i++) {
+    if (i === 3) {
+        break;
+    }
+
+    text += "The number is " + i + "<br>";
+}
+```
+
+* **Labeled break**
+```JS
+let text = "";
+
+loop1: for (let i = 1; i < 5; i++) {
+    loop2: for (let j = 1; j < 5; j++) {
+        if (j === 3) {
+            break loop1;
+        }
+
+        text += i;
+    }
+}
+```
+
+This code will execute and set `text` to **`"11"`**.
+
+Here is how it behaves step-by-step:
+
+1. **`i = 1` (Outer loop starts):**
+* **`j = 1`:** The check `j === 3` is false. `i` (`1`) is appended to `text`. (`text = "1"`)
+* **`j = 2`:** The check `j === 3` is false. `i` (`1`) is appended to `text`. (`text = "11"`)
+* **`j = 3`:** The condition `j === 3` is true.
+
+
+2. **The Break:**
+* `break loop1;` immediately terminates the outer loop (`loop1`) entirely—not just the inner loop.
+
+
+3. **Termination:**
+* Loops stop, and execution moves past the outer loop. No further iterations occur for `i` or `j`.
+
+**`continue`**
+
+The `continue` statement skips the current iteration in a loop.
+
+```JS
+for (let i = 1; i < 10; i++) {
+  if (i === 3) { continue; }
+  text += "The number is " + i + "<br>";
+}
+```
+
+* **`continue` to LableName**
+
+```JS
+let text = "";
+
+loop1: for (let j = 1; j < 5; j++) {
+  loop2: for (let i = 1; i < 5; i++) {
+    if (i === 3) { continue loop1; }
+    text += i;
+   }
+}
+```
+
+This code will set `text` to **`"12121212"`**.
+
+Here is how it behaves step-by-step:
+
+* **Outer Loop (`j = 1`):**
+* `i = 1`: `i === 3` is false. Appends `"1"` to `text` (`text = "1"`).
+* `i = 2`: `i === 3` is false. Appends `"2"` to `text` (`text = "12"`).
+* `i = 3`: `i === 3` is true. `continue loop1;` immediately skips the rest of the inner loop and jumps directly to the next iteration of the outer loop (`j = 2`).
+
+* **Outer Loops (`j = 2, 3, 4`):**
+* The exact same pattern repeats for each remaining iteration of `j`. In every cycle, `i = 1` and `i = 2` append `"12"`, and `i = 3` triggers `continue loop1;`.
+
+Because the outer loop runs 4 times in total (for `j = 1, 2, 3, 4`), `"12"` is appended 4 times.
+
+--- 
+
+# JavaScirpt Strings
+
