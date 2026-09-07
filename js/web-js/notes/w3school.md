@@ -579,5 +579,242 @@ let text = "The character \\ is called backslash.";
 |`\t`|Horizontal Tabulator|
 |`\v`|Vertical Tabulator|
 
-[String Methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+[**String Methods**](https://www.w3schools.com/jsref/jsref_obj_string.asp)
 
+---
+
+# JS Numbers
+
+JavaScript numbers are always 64-bit floating point.
+
+**Interger Precision**
+
+Integers are accurate up to 15 digits.
+```js
+let x = 999999999999999; // x will be 999999999999999
+let y = 9999999999999999; // y will be 10000000000000000
+```
+
+[**Number Methods**](https://www.w3schools.com/jsref/jsref_obj_number.asp)
+
+---
+
+# JS Functions
+
+Learn Functions in the right order 
+1. First the idea.
+2. Then how to make them.
+3. Then how to use them.
+
+**1. What are Functions?**
+* Reusable code blocks.
+* Executed when they are called or invoked.
+
+```js
+function sayHello() {
+  return "Hello World";
+}
+
+let message = sayHello();
+```
+
+**2. Calling Functions**
+* You call a function by adding *parentheses* to its name: *name()*.
+
+* **Calling vs Referencing a Function.**
+    * `sayHello` refers to the function itself. It returns the function.
+    * `sayHello()` refers to the function result. It returns the result.
+
+```js
+function sayHello() {
+  return "Hello World";
+}
+
+let textReference = sayHello;
+let textCall = sayHello();
+```
+
+**3. Function Parameters**
+* Send values to a function.
+* Listed in *parentheses* in the function *definition*.
+
+```JS
+function sayHello(name) {
+    return "Hello " + name;
+}
+
+let greeting = sayHello("John");
+```
+
+*Default Parameter Values*
+```js
+function myFunction(x, y = 10) {
+    return x + y;
+}
+
+let answer1 = myFunction(1, 2);
+let answer2 = myFunction(1);
+```
+
+**4. Function Return values**
+* When a function reaches a **return** statement, the function **stops executing**.
+* The value after the return keyword is sent back to the caller.
+
+```js
+function checkAge(age) {
+    if (age < 18) {
+        return "Too young";
+    }
+
+    return "Access granted";
+}
+```
+
+* **Returning values to HTML**
+
+Returned function values are often used to update HTML content.
+
+```html
+<p id="demo"></p>
+
+<script>
+function toCelsius(farenheit) {
+  return (5 / 9) * (farenheit - 32);
+}
+
+document.getElementById("demo").innerHTML = toCelsius(77);
+</script>
+```
+
+**5. Function Arguments**
+
+JavaScirpt functions have a built-in object called the `arguments` object.
+
+```js
+x = findMax(1, 123, 500, 115, 44, 88);
+
+function findMax() {
+  let max = -Infinity;
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+```
+
+* **Rest Parameter**
+
+The rest parameter(`...`) allows a function to treat an indefinite number of argumetns as an array.
+
+```JS
+function sum(...args) {
+    let sum = 0;
+    for (let arg of args) sum += args;
+
+    return sum;
+}
+
+let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+```
+
+**6. Function Expressions**
+
+A function expression is a **function stored in a variable.**
+
+```js
+// Standard Function
+function multiply(a, b) {
+  return a * b;
+}
+
+// Function Expression
+const multiply = function(a, b) {
+  return a * b;
+};
+```
+
+* **Anonymous Functions**
+
+Functions stored in varaibles don't need names.
+
+```JS
+const multiply = function (a, b) { return a * b };
+
+let z = multiply(4, 3);
+```
+
+Because a function expression is stored in a variable, it can be used like a value.
+
+```js
+function run(fn) {
+    return fn();
+}
+
+const sayHello = function() {
+    return "Hello";
+}
+
+run(sayHello);
+```
+
+**7. Arrow Functions**
+
+Arrow functions allow for a shorthand syntax.
+
+```JS
+const multiply = (a, b) => a * b;
+```
+
+An arrow function is always written as a funciton expression.
+
+```js
+const add = (a, b) => {
+    return a + b;
+}
+```
+
+* **Arrow functions and the `this` keyword.**
+
+Arrow functions do not have their own `this` value.
+They inherit `this` from the surrounding code.
+
+```JS
+const person = {
+    name : "John",
+    greet : function() {
+        return this.name;
+    }
+};
+
+const timer = {
+    seconds : 0,
+    start() {
+        setInterval(() => {
+            this.seconds++ // Arrow function gets `this` from start() being a function of timer.
+            console.log(this.seconds);
+        }, 1000);
+    }
+}
+```
+
+* **`this` keyword**
+
+The `this` keyword refers to the object that is currently executing the function.
+
+```JS
+
+const user = {
+    name : "Alex",
+    greet() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+};
+
+user.greet(); // Output: Hello, I'm Alex
+```
+
+---
+
+# JS Timers
