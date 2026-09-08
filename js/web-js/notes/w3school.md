@@ -818,3 +818,306 @@ user.greet(); // Output: Hello, I'm Alex
 ---
 
 # JS Timers
+
+Timers lets you run a function after a delay or at fixed intervals.
+
+|Function|Description|
+|--------|-----------|
+|`setTimeout()`|Runs a function once after a delay.|
+|`setInterval()`|Runs a function repeatedly.|
+|`clearTimeout()`|Cancels a timeout.|
+|`clearInterval()`|Stops an interval.|
+
+```JS
+
+setTimeout(function, milliseconds);
+setTimeout(myFunction, 3000);
+
+function myFunction() {
+  console.log("Hello!");
+}
+
+setTimeout( () => {
+  return "Hello!";
+}, 3000);
+
+setInterval(function, milliseconds);
+setInterval(showTime, 1000);
+
+function showTime() {
+  const date = new Date();
+  myDisplayer(date.toLocaleTimeString());
+}
+```
+
+--- 
+
+# JavaScript Objects 
+
+**Objects** are variables that can store both **values** and **functions**.
+
+**Values** are stored as **key:value** pais called **properties.**
+**Functions** are stored as **key:function()** pairs called **methods.**
+
+## **JavaScript Objects:** 
+
+Variables that hold both values and functions.
+
+```js
+const car = {
+  type: "Fiat",
+  model: "500",
+  color: "white",
+};
+```
+> `type`, `model`, and `color` are **properties.**
+> `"Fiat"`, `"500"`, and `"white"` are **property values.**
+
+* Object Literals
+
+An object literal "literally" describes an object using a concise syntax with zero or more key:value pairs.
+
+These can be inside curly braces to describe all the object properties.
+
+```js 
+{
+  firstName: "john",
+  lastName: "doe",
+  age: 50,
+  eyeColor: "blue",
+}
+```
+
+### **Object Properties** 
+
+Collections of dynamic key-value pairs that can be modified, added, or removed.
+
+You can access object properties in two ways:
+  1. Dot notation.
+  2. Bracket notation.
+
+```js 
+// dot notation
+objectName.propertyName;
+
+// bracket notation
+objectName["propertyName"];
+```
+
+**Changing Properties**
+`person.age = 10;`
+
+**Adding new properties**
+`person.nationality = "English";`
+
+**Deleting properties**
+```js 
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+};
+
+delete person.age;
+```
+> The `delete` keyword deletes both the value and the property.
+> After deleting, the property is removed. Accessing it will return `undefined`.
+
+**Check if a property exists**
+```js 
+const person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+let result = ("firstName" in person); 
+```
+
+**Nested Objects**
+```js 
+myObj = {
+  name:"John",
+  age:30,
+  myCars: {
+    car1:"Ford",
+    car2:"BMW",
+    car3:"Fiat"
+  }
+};
+
+myObj.myCars.car2;
+```
+
+### **Object Methods** 
+
+Functions stored as property values that perform actions on the object.
+
+Objects can also have **methods.**
+
+Object methods are **actions** that can be performed on objects.
+Object methods are **function definitions** stored as **property values.**
+
+```js 
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+person.fullName();
+```
+> In an object method, `this` refers to **the object.**
+
+**Adding a Method to an Object**
+```js 
+person.name = function () {
+  return this.firstName + " " + this.lastName;
+};
+```
+
+### **Object Display**
+
+Techniques for displaying properties via direct property names, loops, `Object.values()`, or `JSON.stringify()`.
+
+*Why do I See `[object Object]`?*
+
+`[Object Object]` appears when you try to put an object (a data structure with properties) into a context where a string is expected.
+
+`[Object Object]` how JavaScript deals with this situation.
+
+Some solutions to display JavaScript objects are:
+1. Displaying the Object Properties by name
+2. Displaying the Object Properties in a Loop
+3. Displaying the Object using Object.values()
+4. Displaying the Object using JSON.stringify()
+
+```js 
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Add Properties
+let text = person.name + "," + person.age + "," + person.city;
+```
+
+**Using a For ... in loop**
+```js 
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Build a Text
+let text = "";
+for (let x in person) {
+  text += person[x] + " ";
+};
+```
+
+**Object.values()**
+
+`Object.values()` creates an array from the property values.
+```js 
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York",
+};
+
+const myArray = Object.values(person);
+
+let text = myArray.toString(); 
+// output: "John,30,New York"
+```
+
+**Object.entries()**
+
+`Object.entries()` makes it simple to use objects in loops.
+```js
+const fruits = {
+  Bananas: 300,
+  Oranges: 200,
+  Apples: 500,
+};
+
+let text = "";
+for (let [fruit, value] of Object.entries(fruits)) {
+  text += fruit + ": " + value + "<br>";
+}
+```
+
+**JSON.stringify()**
+
+JavaScript objects can be converted to a string with JSON method `JSON.stringify()`
+> JSON : JavaScript Object Notation.
+```js 
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+let text = JSON.stringify(person);
+// output : {"name":"John","age":30,"city":"New York"}
+```
+
+### JavaScript Object Constructors
+
+Functions used to create multiple instances of a specific object type.
+
+* **Constructor Function:** A blueprint used to create multiple objects of the same type (conventionally named with a capital letter, e.g., `Person`).
+* **`this` Keyword:** Refers to the new object being created when called with `new`.
+
+```js 
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+  this.fullName = function() {
+    return this.firstName + " " + this.lastName;
+  };
+}
+```
+
+* **Creating Objects:** Use `new` to instantiate an object (e.g., `const user = new Person(...)`).
+```js 
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+const mySister = new Person("Anna", "Rally", 18, "green");
+
+const mySelf = new Person("Johnny", "Rally", 22, "green");
+```
+
+* **Default Values:** Set defaults inside the constructor using `this.propertyName = "value"`.
+* **Adding to One Instance:** Assign directly to that instance (`myMother.changeName = ...`). It will **not** affect other objects.
+* **Adding to All Instances:** You **cannot** add properties/methods directly to the constructor. You must add them to the **prototype**:
+```js 
+  // this will not work
+  Person.nationality = "English";
+
+  // this will work
+  Person.prototype.nationality = "English";
+
+  // you can also add methods to constructors
+  Person.prototype.changeName = function (name) {
+    this.lastName = name;
+  };
+```
+
+Use literals instead of built-in constructors (new):
+* Use {} instead of new Object()
+* Use [] instead of new Array()
+* Use /pattern/ instead of new RegExp()
+* Use () => {} instead of new Function()
+
+---
+
+# JavaScirpt Scope
+

@@ -23,7 +23,8 @@ Here I outline the development process that I follow for each project that I am 
 ├── 📁 python/       # Python: Data science, web frameworks, & automation
 ├── 📁 nodejs/       # Node.js: Asynchronous backend services & REST APIs
 ├── 📁 js/           # JavaScript: Core language fundamentals, DOM interactions & Frontend Frameworks
-└── 📁 php/          # PHP: Server-side web development & modern frameworks
+├── 📁 php/          # PHP: Server-side web development & modern frameworks
+└── 📁 styles/       # CSS: a stylesheet language used to define the visual presentation, layout, and formatting
 ```
 
 ---
