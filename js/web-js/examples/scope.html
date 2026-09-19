@@ -1,0 +1,44 @@
+<script lang="js">
+    "use strict";
+
+    const globalMessage = "Global message";
+
+    function someFunction(value) {
+        if (true) {
+            var openMessage = "This is function scoped";
+
+            let secureMessage = "This is block scoped";
+        }
+
+        try {
+
+
+            if (value === 1) {
+                document.getElementById("displayText").textContent = openMessage;
+            }
+
+            if (value === 2) {
+                document.getElementById("displayText").textContent = secureMessage;
+            }
+
+            if (value === 3) {
+                document.getElementById("displayText").textContent = globalMessage;
+            }
+        } catch (error) {
+            document.getElementById("displayText").textContent = "We have a error -> " + error;
+        };
+        
+    }
+</script>
+
+<html>
+<body>
+
+<button type="button" onclick="someFunction(1)">Function Scoped</button>
+<button type="button" onclick="someFunction(2)">Block Scoped</button>
+<button type="button" onclick="someFunction(3)">Global Scoped</button>
+
+<p id="displayText">Display message</p>
+
+</body>
+</html>

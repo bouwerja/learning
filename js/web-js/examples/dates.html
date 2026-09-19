@@ -1,0 +1,18 @@
+
+
+<html>
+    <body>
+        <p>Time below</p> <br />
+        <p id="time_elmt"></p>
+    </body>
+
+    <script lang="js">
+        "use strict";
+        
+        const now = new Date();
+        
+        console.log(now.toLocaleDateString());
+        
+        document.getElementById("time_elmt").textContent = now.toLocaleDateString();
+    </script>
+</html>

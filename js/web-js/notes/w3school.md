@@ -1121,3 +1121,279 @@ Use literals instead of built-in constructors (new):
 
 # JavaScirpt Scope
 
+## Scope = Visibility
+
+JavaScirpt variables have 3 types of scope:
+* Global 
+* Function
+* Block 
+
+## Scope Examples
+
+Variables declared with `var`, `let`, and `const` are quite similar when declared outside a block.
+
+```JavaScirpt
+let carName = "Volvo"; // Global scope
+
+function myFunction(value) {
+  if (true) {
+    var message = "This is block scope";
+
+    let secureMessage = "This is function scope";
+  }
+
+  if (value === 1) {
+    console.log(message);
+    // console.log(message);
+  }
+
+  if (value === 2) {
+    console.log(secureMessage);
+    // Error! secureMessage does not exist outside the if-statement block
+  }
+
+  if (value === 3) {
+    console.log(carName)
+  }
+}
+
+myFunction(1); // This prints the message
+
+myFunction(2); // This throws a reference error
+
+myFunction(3); // This prints the carName
+```
+
+## Variable Lifetime
+
+The lifetime of a variable starts when it is declared.
+
+Function `(local)` variables are deleted when the function is completed.
+
+In a web browser, global variables are deleted when you close the browser window `(or tab)`.
+
+**Always use const by default.**
+It prevents accidental reassignments and makes your code more predictable.
+
+**Only use let when:**
+You know its value needs to change later (inside a loop or a mathematical counter).
+
+**Never use var.**
+Its unpredictable scoping and the redeclaration rules are known to cause bugs.
+
+## `use strict`
+
+Makes it easier to write "secure" JavaScirpt.
+
+For example, mistyping a variable name creates a new global variable. In scrict mode,
+this will throw an error, making it impossible to accidentally create a global variable.
+
+In strict mode, any assignment to a non-writable property, a getter-only property, 
+a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
+---
+
+# JS Dates 
+
+```html
+<html>
+    <body>
+        <p>Time below</p> <br />
+        <p id="time_elmt"></p>
+    </body>
+
+    <script lang="js">
+        "use strict";
+        
+        const now = new Date();
+        
+        console.log(now.toLocaleDateString());
+        
+        document.getElementById("time_elmt").textContent = now.toLocaleDateString();
+    </script>
+</html>
+```
+
+## Getter Methods
+
+| Method | Description |
+| :--- | :--- |
+| `getFullYear()` | Get year as a four digit number (yyyy) |
+| `getMonth()` | Get month as a number (0-11) |
+| `getDate()` | Get day as a number (1-31) |
+| `getDay()` | Get weekday as a number (0-6) |
+| `getHours()` | Get hour (0-23) |
+| `getMinutes()` | Get minute (0-59) |
+| `getSeconds()` | Get second (0-59) |
+| `getMilliseconds()` | Get millisecond (0-999) |
+| `getTime()` | Get time (milliseconds since January 1, 1970) |
+
+## Setter Methods
+
+| Method | Description |
+| :--- | :--- |
+| `setDate()` | Set the day as a number (1-31) |
+| `setFullYear()` | Set the year (yyyy) |
+| `setHours()` | Set the hour (0-23) |
+| `setMilliseconds()` | Set the milliseconds (0-999) |
+| `setMinutes()` | Set the minutes (0-59) |
+| `setMonth()` | Set the month (0-11) |
+| `setSeconds()` | Set the seconds (0-59) |
+| `setTime()` | Set the time (milliseconds since January 1, 1970) |
+
+---
+
+# JS Arrays 
+
+An array is an object type designed for storing data collections.
+ * **Element:** An array is a list of values, known as elements.
+ * **Ordered:** Ordered based on their index.
+ * **Zero Indexed:** The first element starts at index 0.
+ * **Dynamic size:** Can grow or shrink as elements are added or removed.
+ * **Heterogeneous:** Arrays can store elements of different data types.
+
+```JavaScirpt
+const array_name = [item1, item2, ...];
+
+const cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+]; 
+
+const carsAgain = [];
+carsAgain[0] = "Saab";
+carsAgain[1] = "Volvo";
+carsAgain[2] = "BMW";
+```
+
+## Constant Arrays
+
+The keyword `const` is a little misleading.
+
+It does NOT define a constant array. It defines a constant reference to an array.
+
+Because of this, we can still change the elements of a constant array.
+
+## Converting an Array
+
+### to a String
+
+The method `toString()` converts an array to a string of (comma separated) array values.
+
+```JavaScirpt
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+// Result: Banana,Orange,Apple,Mango
+```
+
+### using JSON
+
+```JavaScirpt
+const cars = ["Saab", "Volvo", "BMW"];
+
+let text = JSON.strinify(cars);
+```
+
+## Elements
+
+### First element
+
+```JavaScirpt
+let firstCar = cars[0];
+```
+
+### Last element
+
+```JavaScirpt
+let lastCar = cars[cars.lenght - 1];
+```
+
+### Looping
+
+```JavaScirpt
+const cars = ["Saab", "Volvo", "BMW"];
+
+let carLen = cars.length;
+
+let text = "<ul>";
+for (let i = 0; i < carLen; i++) {
+  text += "<li>" + cars[i] + "</li>";
+}
+
+text += "</ul>";
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+} 
+```
+
+### Adding
+
+```JavaScirpt
+const fruits = ["Banana", "Orange", "Apple"];
+
+fruits.push("Lemon");  // Adds a new element (Lemon) to fruits 
+
+fruits[fruits.length] = "Lime";  // Adds "Lime" to fruits 
+```
+
+### Array Methods
+
+| Method / Property | Description |
+| :--- | :--- |
+| `[ ]` | Creates a new Array |
+| `new Array()` | Creates a new Array |
+| `at()` | Returns an indexed element of an array |
+| `concat()` | Joins arrays and returns an array with the joined arrays |
+| `constructor` | Returns the function that created the Array prototype |
+| `copyWithin()` | Copies array elements within the array, to and from specified positions |
+| `entries()` | Returns a key/value pair Array Iteration Object |
+| `every()` | Checks if every element in an array pass a test |
+| `fill()` | Fill the elements in an array with a static value |
+| `filter()` | Creates a new array with every element in an array that pass a test |
+| `find()` | Returns the value of the first element in an array that pass a test |
+| `findIndex()` | Returns the index of the first element in an array that pass a test |
+| `findLast()` | Returns the value of the last element in an array that pass a test |
+| `findLastIndex()` | Returns the index of the last element in an array that pass a test |
+| `flat()` | Concatenates sub-array elements |
+| `flatMap()` | Maps all array elements and creates a new flat array |
+| `forEach()` | Calls a function for each array element |
+| `from()` | Creates an array from an object |
+| `includes()` | Check if an array contains the specified element |
+| `indexOf()` | Search the array for an element and returns its position |
+| `isArray()` | Checks whether an object is an array |
+| `join()` | Joins all elements of an array into a string |
+| `keys()` | Returns a Array Iteration Object, containing the keys of the original array |
+| `lastIndexOf()` | Search the array for an element, starting at the end, and returns its position |
+| `length` | Sets or returns the number of elements in an array |
+| `map()` | Creates a new array with the result of calling a function for each array element |
+| `of()` | Creates an array from a number of arguments |
+| `pop()` | Removes the last element of an array, and returns that element |
+| `prototype` | Allows you to add properties and methods to an Array object |
+| `push()` | Adds new elements to the end of an array, and returns the new length |
+| `reduce()` | Reduce the values of an array to a single value (going left-to-right) |
+| `reduceRight()` | Reduce the values of an array to a single value (going right-to-left) |
+| `reverse()` | Reverses the order of the elements in an array |
+| `shift()` | Removes the first element of an array, and returns that element |
+| `slice()` | Selects a part of an array, and returns the new array |
+| `some()` | Checks if any of the elements in an array pass a test |
+| `sort()` | Sorts the elements of an array |
+| `splice()` | Adds or Removes array elements |
+| `toReversed()` | Reverses the order of array elements (to a new array) |
+| `toSorted()` | Sorts the elements of an array (to a new array) |
+| `toSpliced()` | Adds or Removes array elements (to a new array) |
+| `toString()` | Converts an array to a string, and returns the result |
+| `unshift()` | Adds new elements to the beginning of an array, and returns the new length |
+| `valueOf()` | Returns the primitive value of an array |
+| `with()` | Returns a new array with updated elements |
+
+---
+
+# JavaScript Sets
