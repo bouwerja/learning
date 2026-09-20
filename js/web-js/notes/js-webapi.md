@@ -1,0 +1,1 @@
+# JavaScript Window BOM (Browser Object Model)
