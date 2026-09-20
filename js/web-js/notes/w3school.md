@@ -1271,7 +1271,7 @@ carsAgain[2] = "BMW";
 
 The keyword `const` is a little misleading.
 
-It does NOT define a constant array. It defines a constant reference to an array.
+It does **NOT** define a constant array. It defines a constant reference to an array.
 
 Because of this, we can still change the elements of a constant array.
 
@@ -1397,3 +1397,764 @@ fruits[fruits.length] = "Lime";  // Adds "Lime" to fruits
 ---
 
 # JavaScript Sets
+
+Collection of unique values.
+
+Can be of any type, primitive values or objects.
+
+```JavaScript
+// Create a Set
+const letters = new Set(["a", "b", "c"]);
+
+// Add values to a set
+letters.add("d");
+
+// Create and add variables to a set
+
+const e = "e";
+letters.add(e);
+
+// List all elements
+let text = "";
+for (const x of letters) {
+  text += x;
+}
+```
+
+## JavaScript Set Methods
+
+| Method / Property | Description |
+| :--- | :--- |
+| `new Set()` | Creates a new Set object |
+| `add()` | Adds a new element with a specified value to the Set |
+| `clear()` | Removes all elements from the Set |
+| `delete()` | Removes a specified element from the Set |
+| `entries()` | Returns an Iterator containing `[value, value]` pairs for each element |
+| `forEach()` | Executes a provided function once for each element in the Set |
+| `has()` | Returns `true` if a specified value exists in the Set |
+| `keys()` | Same as `values()`; returns an Iterator for the values in the Set |
+| `values()` | Returns an Iterator containing all the values in the Set |
+| `size` | Returns the total number of elements in the Set |
+
+| Method | Description | 
+| ----- | ----- | 
+| `union()` | Returns a new Set containing all elements from both this Set and the given Set | 
+| `difference()` | Returns a new Set containing elements in this Set that are not in the given Set | 
+| `intersection()` | Returns a new Set containing elements present in both this Set and the given Set | 
+| `isDisjointFrom()` | Returns `true` if this Set has no elements in common with the given Set | 
+| `isSubsetOf()` | Returns `true` if all elements of this Set are in the given Set | 
+| `isSupersetOf()` | Returns `true` if this Set contains all elements of the given Set | 
+| `symmetricDifference()` | Returns a new Set containing elements that are in either Set, but not both | 
+
+## JavaScript WeakSet
+
+A **WeakSet** in JavaScript is a collection of garbage-collectable, unique objects (and non-registered symbols). 
+Unlike a standard Set, a WeakSet holds "weak" references to its values.
+
+The references to objects in a WeakSet are held weakly. 
+If an object stored in a WeakSet has no other remaining references anywhere else in your code, 
+JavaScript's garbage collector can remove it from memory.
+
+---
+
+# JavaScript Maps
+
+A **Map** is an object that can store collections of key-value pairs, similar to a **dictionary**.
+
+Maps differ from standard objects in that **keys can be of any data type.**
+
+* **Key Types**
+Map keys can be any type (strings, numbers, objects, etc).
+
+* **Insertion Order**
+The Map remembers the original insertion order of the keys.
+
+* **Size**
+The number of items in a Map is easily retrieved using the size property.
+
+* **Performance**
+Maps are optimized for frequent additions and removals of key-value pairs.
+
+* **Iteration**
+Maps are iterable, allowing for direct use of for...of loops or methods like `forEach()`.
+
+```JavaScript 
+const fruits = new Map();
+
+// Set Map values
+fruits.set("apples", 500);
+fruits.set("bananas", 300);
+fruits.set("oranges", 200);
+
+// Change Map values
+fruits.set("apples", 100);
+
+// Get the values of a key in a Map
+fruits.get("apples"); // Returns: 100
+```
+
+## WeakMap
+
+A **WeakMap** is a collection of key/value pairs where the **keys must be objects**.
+
+## Map Methods
+
+| Method / Property | Description |
+| :--- | :--- |
+| `new Map()` | Creates a new Map object |
+| `clear()` | Removes all the elements from a Map |
+| `delete()` | Removes a Map element specified by a key |
+| `entries()` | Returns an iterator object with the `[key, value]` pairs in a Map |
+| `forEach()` | Invokes a callback for each key/value pair in a Map |
+| `get()` | Gets the value for a key in a Map |
+| `groupBy()` | Groups object elements according to returned callback values |
+| `has()` | Returns `true` if a key exists in a Map |
+| `keys()` | Returns an iterator object with the keys in a Map |
+| `set()` | Sets the value for a key in a Map |
+| `size` | Returns the number of Map elements |
+| `values()` | Returns an iterator object of the values in a Map |
+
+# JavaScript Loops
+
+`for`: Executes a block of code a known number of times. Composed of three expressions:
+```JavaScript
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+```
+
+* Initialization (exp1): Runs once before the loop starts.
+
+* Condition (exp2): Evaluates before each iteration; code executes as long as this is true.
+
+* Increment/Decrement (exp3): Runs after every iteration.
+
+`while`: Repeats a code block as long as a specified condition remains true. Requires manual updates to condition variables to prevent infinite loops.
+```JavaScript
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+```
+
+`do...while`: Similar to while, but guarantees the code block runs at least once before evaluating the condition.
+```js
+do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 10); 
+```
+
+`for...in`: Iterates over the enumerable properties (keys) of an object.
+```js
+for (key in object) {
+  // code block to be executed
+}
+
+const person = {fname:"John", lname:"Doe", age:25};
+
+let text = "";
+for (let x in person) {
+  text += person[x];
+} 
+```
+
+`for...of`: Iterates directly over the values of iterable objects.
+```js
+for (variable of iterable) {
+  // code block to be executed
+}
+
+const name = "W3Schools";
+
+for (const x of name) {
+  // code block to be executed
+}
+```
+Iterable objects:
+* Iterating over a String
+* Iterating over an Array
+* Iterating over a Set
+* Iterating over a Map
+
+## Iterators
+
+An **Iterator** is an object that provides a standard way to access elements **sequentially**.
+
+### `next()`
+
+The done property returns `false` if there are more elements to iterate over, otherwise it returns `true`.
+
+```js 
+function myNumbers() {
+  let n = 0;
+  return {
+    next: function() {
+      n += 10;
+      return {value:n, done:false};
+    }
+  };
+}
+
+// Run the Iterable
+const n = myNumbers();
+n.next(); // Returns 10
+n.next(); // Returns 20
+n.next(); // Returns 30
+
+myNumbers = {};
+
+// Make it Iterable
+myNumbers[Symbol.iterator] = function() {
+  let n = 0;
+  done = false;
+  return {
+    next() {
+      n += 10;
+      if (n == 100) {done = true}
+      return {value:n, done:done};
+    }
+  };
+}
+
+for (const num of myNumbers) {
+  // Any Code Here
+}
+```
+
+### 1. `Iterator.from()`
+
+Creates an iterator object from an iterable or existing iterator.
+
+```javascript
+const numbers = [10, 20, 30];
+const iter = Iterator.from(numbers);
+
+console.log(iter.next().value); // 10
+console.log(iter.next().value); // 20
+
+```
+
+### 2. `drop()`
+
+Returns an iterator that skips a specified number of elements before yielding the rest.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const iter = Iterator.from(numbers).drop(2);
+
+console.log([...iter]); // [3, 4, 5]
+
+```
+
+### 3. `take()`
+
+Returns an iterator that yields a specified number of elements from the beginning.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const iter = Iterator.from(numbers).take(3);
+
+console.log([...iter]); // [1, 2, 3]
+
+```
+
+### 4. `map()`
+
+Returns an iterator with all elements transformed by a mapping function.
+
+```javascript
+const numbers = [1, 2, 3];
+const iter = Iterator.from(numbers).map(x => x * 10);
+
+console.log([...iter]); // [10, 20, 30]
+
+```
+
+### 5. `filter()`
+
+Returns an iterator containing elements that satisfy a filter predicate function.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+const iter = Iterator.from(numbers).filter(x => x % 2 === 0);
+
+console.log([...iter]); // [2, 4, 6]
+
+```
+
+### 6. `flatMap()`
+
+Returns an iterator by mapping each element and then flattening the resulting iterables.
+
+```javascript
+const words = ["hello", "world"];
+const iter = Iterator.from(words).flatMap(word => word.split(""));
+
+console.log([...iter]); // ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']
+
+```
+
+### 7. `find()`
+
+Returns the first element that satisfies a test function, or `undefined`.
+
+```javascript
+const numbers = [5, 12, 8, 130, 44];
+const result = Iterator.from(numbers).find(x => x > 10);
+
+console.log(result); // 12
+
+```
+
+### 8. `some()`
+
+Returns `true` if at least one element satisfies the test function.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const hasEven = Iterator.from(numbers).some(x => x % 2 === 0);
+
+console.log(hasEven); // true
+
+```
+
+### 9. `every()`
+
+Returns `true` if all elements in the iterator satisfy the test function.
+
+```javascript
+const numbers = [2, 4, 6, 8];
+const allEven = Iterator.from(numbers).every(x => x % 2 === 0);
+
+console.log(allEven); // true
+
+```
+
+### 10. `reduce()`
+
+Applies a reducer function against each element to accumulate a single result value.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const sum = Iterator.from(numbers).reduce((acc, curr) => acc + curr, 0);
+
+console.log(sum); // 10
+
+```
+
+### 11. `forEach()`
+
+Executes a provided function once for each element in the iterator (consumes the iterator).
+
+```javascript
+const items = ["a", "b", "c"];
+
+Iterator.from(items).forEach(item => {
+  console.log(item);
+});
+// Logs:
+// "a"
+// "b"
+// "c"
+
+```
+
+## Core Concept
+
+JavaScript Generators are special functions that can be paused and resumed, preserving their internal state between executions. 
+
+While regular functions return a single value, generators can yield multiple values sequentially.
+
+## Syntax & Fundamentals
+
+* **Declaration:** Defined using the `function*` syntax (e.g., `function* myGenerator() {}`).
+* **Yield Keyword:** Pauses execution and returns a value to the caller. Execution resumes from the exact point of the `yield` when triggered again.
+* **Return Value:** Calling a generator function returns a **Generator Object**, which implements both the iterable and iterator protocols.
+
+## Generator Object Methods
+
+* **`next()`:** Resumes execution until the next `yield` or `return`. Returns an object in the format `{ value: any, done: boolean }`.
+* **`return()`:** Forcefully finishes execution and returns the provided value.
+* **`throw()`:** Throws an exception inside the generator at its current execution point.
+
+## Iteration & Usage Notes
+
+* **`for...of` Loops:** Generator objects can be looped over directly.
+* **Handling `return` vs. `yield`:** A `for...of` loop ignores values returned via `return` because it exits as soon as `done: true` is reached. To ensure all values are included during iteration, use `yield` instead of `return`.
+
+## Key Use Cases
+
+* **Custom Iterators:** Simplifies creating custom iteration logic for complex data structures.
+* **On-Demand & Infinite Streams:** Efficiently handles large or infinite data sets by generating values lazily as needed.
+* **Flow Control:** Offers fine-grained execution management and was historically combined with Promises for async control before `async/await`.
+
+---
+
+# JavaScript Datatypes
+
+## Primitive Data Types
+
+| Data Type | Description | 
+ | ----- | ----- | 
+| `Number` | A number representing a numeric value | 
+| `BigInt` | A number representing a large integer | 
+| `String` | A text of characters enclosed in quotes | 
+| `Boolean` | A data type representing true or false | 
+| `Undefined` | A variable with no assigned value | 
+| `Null` | A value representing object absence | 
+| `Symbol` | A unique primitive identifier | 
+
+## Structural & Object Data Types
+
+| Type / Object | Description | 
+ | ----- | ----- | 
+| `Object` | A collection of key-value pairs of data | 
+| `Array` | Array of values accessed by a numerical index | 
+| `Map` | Key-value pairs where the keys can be of any data type | 
+| `Set` | Collection of unique values where each value can only appear once | 
+| `WeakMap` | A type of Map with weak references to the stored objects | 
+| `WeakSet` | A type of Set with weak references to the stored objects | 
+| `Math` | An object that provides math constants and functions like `PI` and `random()` | 
+| `Date` | Object for working with dates and times | 
+| `RegExp` | Object for working with regular expressions | 
+| `Error` | Object represents error conditions during program execution | 
+| `JSON` | Object with methods for parsing values between JSON and objects | 
+| `Promise` | Object representing the completion or failure of an asynchronous operation | 
+
+## Typed Arrays
+
+| Typed Array | Description | 
+ | ----- | ----- | 
+| `Int8Array` | Array for storing fixed-size 8-bit integer values | 
+| `Int16Array` | Array for storing fixed-size 16-bit integer values | 
+| `Int32Array` | Array for storing fixed-size 32-bit integer values | 
+| `Float16Array` | Array for storing fixed-size 16-bit floating-point values | 
+| `Float32Array` | Array for storing fixed-size 32-bit floating-point values | 
+| `Float64Array` | Array for storing fixed-size 64-bit floating-point values | 
+| `BigInt64Array` | Array for storing fixed-size 64-bit big integer values | 
+
+```js 
+// Number
+let length = 16;
+let weight = 7.5;
+
+// BigInt
+let x = 1234567890123456789012345n;
+let y = BigInt(1234567890123456789012345)
+// Strings
+let color = "Yellow";
+let lastName = "Johnson";
+
+// Boolean
+let x = true;
+let y = false;
+
+// Undefined
+let x;
+let y;
+
+// Null
+let x = null;
+let y = null;
+
+// Symbol
+const x = Symbol();
+const y = Symbol();
+
+// Object
+const person = {firstName:"John", lastName:"Doe"};
+
+// Array Object
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Date Object
+const date = new Date("2022-03-25");
+```
+
+* A variable without a value is `undefined`
+```js
+let car;
+
+console.log(car); // Result: undefined
+```
+
+* `NaN` is short for *Not a Number*.
+```js 
+let x = 10 / "Apple";
+
+console.log(x); // Result: NaN
+```
+
+## DataType Conversion
+
+#### Converting to Numbers
+
+* **`Number()`**: Converts variables, literals, or expressions into numbers.
+* `"3.14"` $\rightarrow$ `3.14`
+* `""` or `" "` $\rightarrow$ `0`
+* `false` $\rightarrow$ `0` | `true` $\rightarrow$ `1`
+* Non-numeric strings (e.g., `"John"` or `"99 88"`), `undefined`, and functions $\rightarrow$ `NaN`
+* `null` $\rightarrow$ `0`
+* Dates $\rightarrow$ milliseconds since epoch (same as `date.getTime()`)
+
+* **`parseInt()` & `parseFloat()**`: Parse strings into integers or floating-point numbers.
+* **Unary `+` Operator**: Converts variables directly to numbers (returns `NaN` if conversion fails).
+
+#### Converting to Strings
+
+* **`String()` or `.toString()**`: Global method and object method to convert values to strings.
+* Numbers, Booleans, Dates, and Arrays return their string representations.
+* Objects (`{}`) $\rightarrow$ `"[object Object]"`
+
+* **Number Formatting Methods**:
+* `toExponential()`: Exponential notation.
+* `toFixed()`: Specified number of decimals.
+* `toPrecision()`: Specified length.
+
+#### Converting to Booleans
+
+* **Truthy vs. Falsy**:
+* **Falsy** (convert to `false`): `0`, `""`, `NaN`, `null`, `undefined`, `false`.
+* **Truthy** (convert to `true`): All other values, including `"0"`, `"false"`, `[]`, `{}`, `Infinity`, and non-empty strings.
+
+### Automatic (Implicit) Type Conversion
+
+* JavaScript automatically converts data types when performing operations on mismatched types.
+* **String coercion**: JavaScript automatically calls an object's `.toString()` method when outputting a variable (e.g., in DOM manipulation).
+
+### Key Conversion Examples Reference
+
+| Original Value | To Number | To String | To Boolean |
+| --- | --- | --- | --- |
+| `false` | `0` | `"false"` | `false` |
+| `true` | `1` | `"true"` | `true` |
+| `""` (empty string) | `0` | `""` | `false` |
+| `"20"` | `20` | `"20"` | `true` |
+| `[ ]` (empty array) | `0` | `""` | `true` |
+| `null` | `0` | `"null"` | `false` |
+| `undefined` | `NaN` | `"undefined"` | `false` |
+
+--- 
+
+# JavaScript Errors
+
+Handling errors 
+
+```js 
+let x = 5;
+
+try {
+  x = y + 1;
+} catch (err) {
+  let text = err.name;
+}
+```
+
+> **Silent Errors** are issues that do not throw exceptions or stop execution.
+
+```js 
+let result = "Not Active.";
+let isActive = false;
+
+if (isActive = true) { // ❌ Assignment, not comparison
+  let result = "Active!";
+}
+
+// NaN - no error, just wrong data
+const result = parseInt("abc");
+
+// Accessing a missing property retuns undefined
+const user = {};
+let result = user.name;
+```
+
+## `try...catch` 
+
+> JavaScript will actually create an **Error object** with two properties: **name** and **message**.
+
+```js 
+try {
+  // Code that may cause an error
+} catch (error) {
+  // Code to handle the error
+} finally {
+  // Code that always runs, no matter what
+}
+```
+
+**`throw` Statement**
+```js 
+try {
+  // Code that may cause an error
+} catch (error) {
+  throw "An error has occured";
+}
+```
+
+## Example
+```js 
+function myFunction() {
+  const message = document.getElementById("p01");
+  message.innerHTML = "";
+
+  let x = document.getElementById("demo").value;
+
+  try {
+    if(x.trim() == "") throw "is empty";
+
+    if(isNaN(x)) throw "is not a number";
+
+    x = Number(x);
+
+    if(x > 10) throw "is too high";
+
+    if(x < 5) throw "is too low";
+
+  } catch(err) {
+    message.innerHTML = "Error: " + err + ".";
+  } finally {
+    document.getElementById("demo").value = "";
+  }
+} 
+```
+
+## Error Object Methods & Properties
+
+| Method / Property | Description |
+| :--- | :--- |
+| `new Error()` | Creates a new Error object |
+| `name` | Sets or returns an error name |
+| `message` | Sets or returns an error message |
+| `cause` | Sets or returns an error cause |
+| `Error.isError(x)` | Returns `true` if a value (`x`) is an Error |
+
+## Standard Error Names
+
+| Error Name | Description |
+| :--- | :--- |
+| `EvalError` | Deprecated — use `SyntaxError` instead |
+| `RangeError` | A number "out of range" has occurred |
+| `ReferenceError` | An illegal reference has occurred |
+| `SyntaxError` | A syntax error has occurred |
+| `TypeError` | A type error has occurred |
+| `URIError` | An error in `encodeURI()` has occurred |
+
+---
+
+# Debugging
+
+## Core Debugging Process
+
+Debugging is the practice of systematically finding and fixing mistakes (bugs) by checking facts rather than guessing.
+
+* **The Debugging Habit:** Read the error $\rightarrow$ Reproduce the problem $\rightarrow$ Reduce to a small example $\rightarrow$ Fix it.
+* **General Checklist:** Check the console, read error messages, log values, isolate the issue, and fix one thing at a time.
+
+## Key Debugging Tools & Techniques
+
+* **Browser Console:** The primary tool for finding hidden errors. Open it directly using **F12**, or navigate through your browser's Developer Tools menu.
+* **`console.log()`:** Used to print messages or variable values before and after suspected code lines to track execution and verify assumptions.
+* **Variable & Type Verification:** Confirm that variables hold the expected values and types (e.g., distinguishing between the number `5` and the string `"5"`).
+
+## Common Errors & Mistakes
+
+* **ReferenceError:** Occurs when using an undeclared or misspelled variable name.
+* **TypeError:** Occurs when using a value in an impossible way (frequently involving `null` or `undefined`).
+* **Assignment vs. Comparison:** Using a single equals sign (`=`) inside a conditional statement assigns a value instead of comparing it (`==` or `===`).
+
+## Breakpoints
+
+* **Breakpoints:** Tools in browser developer tools that pause JavaScript execution at a specific line, allowing you to inspect live variable values and step through code rather than guessing.
+* **The `debugger` Keyword:** A built-in JavaScript statement that acts as a hardcoded breakpoint. It pauses execution if developer tools are open, but is ignored if no debugger is available.
+
+### How to Set & Control Breakpoints
+
+1. Open DevTools (**F12**) and go to the **Sources** tab.
+2. Click a line number to set a breakpoint, then reload the page to trigger it.
+3. Use execution controls once paused:
+* **Play / Resume:** Continue code execution.
+* **Step Over:** Execute the next line of code.
+* **Step Into:** Enter the function being called on the current line.
+* **Step Out:** Finish executing the current function and return to the caller.
+
+### Key DevTools Panels
+
+* **Scope Panel:** Displays active variables at the paused line and distinguishes between **Local** (function-level) and **Global** variables.
+* **Watch Panel:** Enables tracking specific variables live as code executes, replacing the need for multiple `console.log()` statements.
+
+### Best Practices & Beginner Avoidance
+
+* **When to Use:** Use when tracking unexpected value changes, incorrect logic results, or complex function execution.
+* **Common Mistakes:** Forgetting to reload the page to hit a new breakpoint, or getting caught in long loops (temporarily disable the breakpoint if it triggers too often).
+
+## Async Errors
+
+* **Delayed execution:** Async code does not run top-to-bottom; it executes later when an operation finishes, making errors feel invisible.
+* **Common issues:** Beginners frequently encounter missing data, silent failures, and promises that never resolve (often due to a missing `return`).
+
+### Debugging `fetch()` & Promises
+
+* **Log early:** Always log the raw `response` object before converting or using the payload.
+* **Inspect the Network tab:** Use browser DevTools to verify file paths, request statuses, and server response codes.
+* **Return promises:** Always return promises inside functions to enable proper promise chaining.
+```js 
+fetch("data.json")
+.then(response => {
+  console.log(response);
+  return response.json();
+})
+.then(data => console.log(data));
+```
+
+### Debugging `async` / `await`
+
+* **Readability:** `async`/`await` simplifies syntax, but operations remain asynchronous.
+* **Breakpoints:** Set breakpoints directly on `await` lines to step through execution as you would with synchronous code.
+```js 
+async function loadData() {
+  let response = await fetch("data.json");
+  let data = await response.json();
+  console.log(data);
+}
+
+loadData();
+```
+
+### Handling Errors
+
+* **Explicit handling:** Catch errors explicitly to prevent them from failing silently.
+* **Try...Catch:** Wrap `await` calls inside `try...catch` blocks to capture and log network or parsing failures.
+
+### Async Debugging Checklist
+
+1. Check the console for explicit error messages.
+2. Inspect the Network tab for failed HTTP requests or bad paths.
+3. Log raw responses before attempting to process data.
+4. Use `try...catch` blocks inside `async` functions.
+5. Place breakpoints on `await` lines to trace flow.
+
+---
+
+# JavaScript Performance
+
+### Optimize Loops
+
+* **Cache array length:** Store array length in a variable outside the loop (e.g., `let l = arr.length`) so it isn't repeatedly calculated during each iteration.
+* **Minimize loop statements:** Move any static statements or assignments outside the loop body.
+
+### Minimize DOM Operations
+
+* **Cache DOM references:** Store accessed DOM elements in local variables if they are needed multiple times to avoid repeated, slow DOM lookups.
+* **Keep DOM size small:** Reduce the total number of HTML elements to improve overall page load, rendering speeds, and search query efficiency.
+
+### Code & Execution Cleanup
+
+* **Avoid unnecessary variables:** Eliminate temporary variables if their values do not need to be saved or reused elsewhere.
+* **Do not use `with`:** Avoid the `with` keyword, as it slows execution speed, clutters scope, and is prohibited in strict mode.
+
+### Defer Script Loading
+
+* **Place scripts at the bottom:** Move `<script>` tags to the end of the `<body>` so script downloading does not block parallel asset downloads, HTML parsing, or page rendering.
+* **Use `defer` or dynamic loading:** Use the `defer="true"` attribute on external scripts to execute them after parsing, or dynamically inject scripts after the page has loaded.
