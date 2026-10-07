@@ -1,6 +1,9 @@
 [
   "advanced-canvas",
   "card-board",
-  "obsidian-git",
-  "obsidian-linter"
+  "obsidian-linter",
+  "dynamic-outline",
+  "obsidian-plugin-toc",
+  "terminal",
+  "obsidian-reading-time"
 ]

@@ -1,0 +1,96 @@
+<html>
+
+    <body>
+
+        <h1>Current Location</h1>
+        <ul>
+            <li id="href">href: </li>
+            <li id="hostname">hostname: </li>
+            <li id="pathname">pathname: </li>
+            <li id="protocol">protocol: </li>
+        </ul>
+
+        <button onclick="clickForSize()">Click to see size.</button>
+        
+        <p id="size_display">This should display the window size.</p>
+    
+        <button onclick="clickForScreenSize()">Click to see your screen size.</button>
+        
+        <p id="size_screen">This should display the screen size.</p>
+
+        <h3>Other window methods</h3>
+
+        <button onclick="clickToClose()">Click to close.</button>
+    
+        <button onclick="clickToOpen()">Click to open.</button>
+
+        <form id="resize_form">
+            <br><br>
+            <label>
+                Height (px):
+                <input type="number" id="window_height" placeholder="e.g. 500">
+            </label>
+            <br><br>
+            <label>
+                Width (px):
+                <input type="number" id="window_width" placeholder="e.g. 600">
+            </label>
+            <br><br>
+            <button type="button" onclick="clickToResize()">Click to resize.</button>
+        </form>
+    
+    </body>
+
+    <script>
+
+        const href_text = document.getElementById("href").textContent;
+        document.getElementById("href").textContent = href_text + location.href;
+
+        const hostname_text = document.getElementById("hostname").textContent;
+        document.getElementById("hostname").textContent = hostname_text + location.hostname;
+
+        const pathname_text = document.getElementById("pathname").textContent;
+        document.getElementById("pathname").textContent = pathname_text + location.pathname;
+
+        const protocol_text = document.getElementById("protocol").textContent;
+        document.getElementById("protocol").textContent = protocol_text + location.protocol;
+
+        function clickForSize() {
+            const height = window.innerHeight.toString();
+            const width = window.innerWidth.toString();
+
+            document.getElementById("size_display").textContent = height + " x " + width;    
+        }
+
+        function clickForScreenSize() {
+            const height = screen.height;
+            const width = screen.width;
+
+            document.getElementById("size_screen").textContent = height + " x " + width;
+        }
+
+        function clickToClose() {
+            window.close();
+        }
+
+        function clickToOpen() {
+            window.open();
+        }
+
+        let targetWindow = null;
+
+        function clickToResize() {
+            const height = parseInt(document.getElementById("window_height").value, 10);
+            const width = parseInt(document.getElementById("window_width").value, 10);
+
+            if (!targetWindow || targetWindow.closed) {
+                alert("This probably will not work because of security.");
+                return;
+            }
+
+            window.resizeTo(width, height);
+        }
+        
+    </script>
+
+</html>
