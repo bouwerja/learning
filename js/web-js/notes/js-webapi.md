@@ -145,3 +145,31 @@ function checkCookie() {
 # JavaScript Fetch API
 
 JavaScript Fetch API is used to make asynchronous network requests to web servers.
+
+Fetch uses standard JavaScript **Promises**.
+
+## Fething a Text File
+
+```js
+fetch(file).then(function(response) {
+		return response.text();
+	})
+	.then(function (data) {
+		myDisplayer(data);
+	})
+```
+
+or using arrow functions
+```js
+fetch(file).then(response => response.text()).then(data => myDisplayer(data));
+```
+
+using Asynchronous functions
+```js
+async function loadText(file) {
+	const response = await fetch(file);
+	myDisplayer(await response.text());
+}
+```
+
+## Response Object

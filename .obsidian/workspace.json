@@ -208,8 +208,7 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "terminal:Open terminal": false,
-      "card-board:CardBoard": false
+      "terminal:Open terminal": false
     }
   },
   "active": "0ad807dd2068813c",
