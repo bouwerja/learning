@@ -143,3 +143,5 @@ function checkCookie() {
 ---
 
 # JavaScript Fetch API
+
+JavaScript Fetch API is used to make asynchronous network requests to web servers.
