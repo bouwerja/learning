@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "file:js-basics",
+  "search": "",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -17,6 +17,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.6666666666666666,
-  "close": false
+  "scale": 0.1373868770703177,
+  "close": true
 }
