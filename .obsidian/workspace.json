@@ -4,24 +4,80 @@
     "type": "split",
     "children": [
       {
-        "id": "c0a943ad36301481",
-        "type": "tabs",
+        "id": "a63bf64b8b34e20f",
+        "type": "split",
         "children": [
           {
-            "id": "0ad807dd2068813c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "js/web-js/notes/js-webapi.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "js-webapi"
-            }
+            "id": "c0a943ad36301481",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0ad807dd2068813c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "js/web-js/notes/js-webapi.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "js-webapi"
+                }
+              }
+            ]
+          },
+          {
+            "id": "328de5f75a7ebfba",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9dfbe03961568a14",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "/home/jason/Code/learning",
+                      "focus": false,
+                      "profile": {
+                        "args": [],
+                        "environment": [],
+                        "executable": "/bin/sh",
+                        "followTheme": true,
+                        "name": "",
+                        "platforms": {
+                          "linux": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": false,
+                        "rightClickAction": "copyPaste",
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {
+                          "documentOverride": null
+                        },
+                        "type": "integrated",
+                        "win32Backend": "conpty"
+                      },
+                      "profileSourceId": "linuxIntegratedDefault",
+                      "serial": null,
+                      "userTitle": ""
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "sh"
+                }
+              }
+            ]
           }
-        ]
+        ],
+        "direction": "horizontal"
       },
       {
         "id": "665833f59a157f73",
@@ -34,7 +90,7 @@
               "type": "markdown",
               "state": {
                 "file": "js/web-js/notes/js-webapi.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -208,10 +264,11 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "terminal:Open terminal": false
+      "terminal:Open terminal": false,
+      "card-board:CardBoard": false
     }
   },
-  "active": "0ad807dd2068813c",
+  "active": "9dfbe03961568a14",
   "lastOpenFiles": [
     "js/web-js/notes/js-webapi.md",
     "js/web-js/examples/window_size.html",
