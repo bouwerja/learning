@@ -294,7 +294,7 @@
       "win32Backend": "conpty"
     }
   },
-  "defaultProfile": null,
+  "defaultProfile": "linuxIntegratedDefault",
   "terminalOptions": {
     "documentOverride": null
   }
