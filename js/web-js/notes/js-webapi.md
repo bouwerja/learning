@@ -232,7 +232,7 @@ async function loadText(file) {
 ```js
 async function loadText(file) {
 	const response = await fetch(file);
-	const url = response.url);
+	const url = response.url;
 	
 	console.log("This is the url " + url);
 }
