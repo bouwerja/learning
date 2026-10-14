@@ -40,8 +40,15 @@ async function searchAnimeTitle() {
 
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error("HTTP Error Code: " + response.status);
+            const respValue = await response.json()
+
+            if (response.status === 404) {
+                throw new Error(respValue.error.message + " | Not Found! Maybe check your spelling.")
+            }
+
+            throw new Error("Error Message: " + respValue.error.message);
         }
+
         const jsonResponse = await response.json();
         const animeData = jsonResponse.data;
 
@@ -50,43 +57,69 @@ async function searchAnimeTitle() {
             initialQuote.remove();
         }
 
-        animeData.forEach(element => {
-            console.log(element.content);
-        });
+        let quoteCount = 1;
+        let historyArray = [];
+        const uList = document.createElement("ul");
         
+        animeData.forEach(element => {
+            const itemName = `quote-item-${quoteCount}`;
+            let iList = document.getElementById(itemName);
+            if (!iList) {
+                iList = document.createElement("li");
+                iList.id = itemName;
+            }
+
+            const quote = `Quote ${quoteCount}: ` + element.content;
+            iList.textContent = quote;
+            quoteCount++;
+            historyArray.push(quote);
+
+            uList.appendChild(iList);
+
+        });
+
+        document.body.appendChild(uList);
+
+        const oldHeading = document.getElementById("prev-quote");
+        if (oldHeading) {
+            oldHeading.remove();
+        }
+
+        const oldList = document.getElementById("prev-quote-list");
+        if (oldList) {
+            oldList.remove();
+        }
+
+        const storage = localStorage.getItem("prevQuote");
+
+        if (storage !== null) {
+            const quotes = JSON.parse(storage);
+
+            if (quotes && quotes.length > 0) {
+                const prevQuoteHeading = document.createElement("h2");
+                prevQuoteHeading.id = "prev-quote";
+                prevQuoteHeading.textContent = "These are your previous quotes.";
+                document.body.appendChild(prevQuoteHeading);
+
+                const prevQuoteList = document.createElement("ul");
+                prevQuoteList.id = "prev-quote-list";
+
+                quotes.forEach(quoteText => {
+                    const li = document.createElement("li");
+                    li.textContent = quoteText;
+                    prevQuoteList.appendChild(li);
+                });
+
+                document.body.appendChild(prevQuoteList);
+            }
+        }
+
+        localStorage.setItem("prevQuote", JSON.stringify(historyArray));
+
+
     } catch (error) {
-        let message = "A error has occured" + error.message;
+        let message = "A error has occured: " + error.message;
         console.error(message);
         alert(message);
     }
-}
-
-async function displayLoader(responseValue) {
-
-    const timeOut = 30;
-
-    for (let i = 0; i < timeOut; i++) {
-
-        if (responseValue !== undefined && i >= 3) {
-            document.getElementById("Loading").remove();
-            return
-        }
-
-        let message = "Loading.";
-        if (i%2 === 0) {
-            message = "Loading..";
-        } else if (i%3 === 0) {
-            message = "Loading...";
-        }
-
-        let loading = document.getElementById("Loading");
-        loading.textContent = message;
-
-        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-        await sleep(500);
-    }
-
-    alert("You have timed out.")
-    
-    return
 }
