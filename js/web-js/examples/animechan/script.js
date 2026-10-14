@@ -60,7 +60,7 @@ async function searchAnimeTitle() {
         let quoteCount = 1;
         let historyArray = [];
         const uList = document.createElement("ul");
-        
+
         animeData.forEach(element => {
             const itemName = `quote-item-${quoteCount}`;
             let iList = document.getElementById(itemName);
@@ -93,7 +93,8 @@ async function searchAnimeTitle() {
         const storage = localStorage.getItem("prevQuote");
 
         if (storage !== null) {
-            const quotes = JSON.parse(storage);
+            const data = JSON.parse(storage);
+            const quotes = JSON.parse(data.value);
 
             if (quotes && quotes.length > 0) {
                 const prevQuoteHeading = document.createElement("h2");
@@ -114,7 +115,12 @@ async function searchAnimeTitle() {
             }
         }
 
-        localStorage.setItem("prevQuote", JSON.stringify(historyArray));
+        const now = new Date();
+        const storageItem = {
+            value: JSON.stringify(historyArray),
+            expiry: now.getTime() + 3600000, // 1 hour till expiry.
+        }
+        localStorage.setItem("prevQuote", JSON.stringify(storageItem));
 
 
     } catch (error) {
