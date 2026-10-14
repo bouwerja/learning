@@ -4,24 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "665833f59a157f73",
+        "id": "0a2b2f15f6b3b7b0",
         "type": "tabs",
         "children": [
           {
-            "id": "aa4c4a771255a353",
+            "id": "af146abc0574d878",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "js/web-js/examples/animechan/anime-search.canvas",
-                "viewState": {
-                  "x": 112.47485451639757,
-                  "y": -44.82684710760474,
-                  "zoom": 0.02203886293720525
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "anime-search"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -194,15 +187,17 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "21e26744f54f9e46",
+  "active": "af146abc0574d878",
   "lastOpenFiles": [
-    "js/web-js/notes/js-webapi.md",
+    "README.md",
+    "LICENSE.md",
+    "nodejs/mvc/example/node_modules/express-sessions/node_modules/mongoose/README.md",
     "js/web-js/examples/animechan/anime-search.canvas",
+    "js/web-js/notes/js-webapi.md",
     "js/web-js/examples/animechan/index.html",
     "js/web-js/examples/animechan/script.js",
     "js/web-js/examples/animechan",
     "js/web-js/notes/Untitled.md",
-    "README.md",
     "research/README.md",
     "research",
     "js/web-js/examples/dates.html",
