@@ -44,10 +44,10 @@ $$\text{Target Gap} = \text{Current Verifiable State/Metric} - \text{Desired Tar
 
 **1.3 Gap Triage Filter**
 
-1. **Lineage Test**: Is *Gap A* cause by *Gap B*
+1. **Lineage Test**: Is *Gap A* caused by *Gap B*?
     - *Rule:* Discard *Gap B* because if *Gap A* is solved so will *Gap B*.
 2. **Sphere of Authority**: Can you control the *Gap*?
-    - *Rule:* No direct control the *Gap* becomes a constraint.
+    - *Rule:* No direct control then *Gap* becomes a constraint.
 
 > **Fallback Rule:** If all candidate gaps fail the Sphere of Authority Test, shrink your system boundary until you reach a component within your direct control.
 
