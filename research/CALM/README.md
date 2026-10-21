@@ -24,12 +24,12 @@ When faced with complex, chaotic, or unfamiliar problems, **C.A.L.M.** provides 
 When analyzing a domain without prior expertise, treat the system as a black box and locate gaps purely by measuring variances against a baseline:
 
 1. Establish **Baseline** Contract: Identify documented SLAs, target metrics, system boundaries (Entry/Exit), and trigger events.
-2. **Audit** Across the 4 Universal Axes:
+2. **Execute Pipeline Walk:** Trace workflow step-by-step from Entry to Exit. Log expected state vs. observed state at every transition node.
+3. **Audit** Across the 4 Universal Axes:
 	* **Temporal:** Latency, duration, execution delays, sequence out-of-order.
 	* **Quantitative:** Rate drops, volume losses, throughput bottlenecks.
 	* **Qualitative:** Corrupted state, missing payload fields, error states.
 	* **Resource:** Over-consumption of memory, money, labor, or compute.
-3. **Execute Pipeline Walk:** Trace workflow step-by-step from Entry to Exit. Log expected state vs. observed state at every transition node.
 4. **Compile Candidate Gaps:** Every instance where $\text{Expected} \neq \text{Observed}$ becomes a Candidate Gap.
 
 ### 2. Calculate the Target Gap
@@ -43,7 +43,7 @@ $$\text{Target Gap} = \text{Current Verifiable State/Metric} - \text{Desired Tar
 Run every candidate gap through these two sequential gates to select the primary target gap:
 
 1. **The Lineage Test:** Is this gap a root mismatch or merely a downstream symptom of another gap?
-	* Rule:* Trace the gap upstream one level. If Gap B exists only because Gap A exists, discard Gap B and isolate Gap A.
+	* Rule: Trace the gap upstream one level. If Gap B exists only because Gap A exists, discard Gap B and isolate Gap A.
 2. **The Sphere of Authority Test:** Do you have direct authority to modify this gap, or can you influence it via a 1-degree proxy?
 	* *Rule:* If closing the gap requires third-party action outside your control, redefine the gap as an internal structural state (e.g., instead of *"Vendor API is slow"*, define the gap as *"System lacks an asynchronous fallback mechanism"*).
 
