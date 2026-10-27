@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "js/web-js/notes/js-advanced.md",
+                "file": "LICENSE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "js-advanced"
+              "title": "LICENSE"
             }
           }
         ]
@@ -213,8 +213,8 @@
   },
   "active": "d991f8466dbb18ea",
   "lastOpenFiles": [
-    "nodejs/learning/Core Modules.md",
     "js/web-js/notes/js-advanced.md",
+    "nodejs/learning/Core Modules.md",
     "nodejs/learning/Module Basics.md",
     "nodejs/learning/Asynchronous.md",
     "[[.md",
