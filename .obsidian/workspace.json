@@ -11,10 +11,34 @@
             "id": "d991f8466dbb18ea",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "js/web-js/notes/js-advanced.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "js-advanced"
+            }
+          }
+        ]
+      },
+      {
+        "id": "70d18e12fa41ecf6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73c9f3655d09a401",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "nodejs/learning/Core Modules.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Core Modules"
             }
           }
         ]
@@ -189,6 +213,12 @@
   },
   "active": "d991f8466dbb18ea",
   "lastOpenFiles": [
+    "nodejs/learning/Core Modules.md",
+    "js/web-js/notes/js-advanced.md",
+    "nodejs/learning/Module Basics.md",
+    "nodejs/learning/Asynchronous.md",
+    "[[.md",
+    "nodejs/learning/Introduction.md",
     "Docker/Vue.js Guide.md",
     "js/vuejs/notes/Vue.js Documentation Summary.md",
     "js/vuejs/learning-notes/basic-vuejs/essentials/createing-application.md",
@@ -204,7 +234,6 @@
     "golang/Introduction.md",
     "Docker/Getting Started.md",
     "nodejs/mvc/notes/NodeJS.md",
-    "nodejs/learning/Introduction.md",
     "Docker",
     "nodejs/learning/Hardware.md",
     "nodejs/learning/Advanced.md",
@@ -212,11 +241,6 @@
     "nodejs/learning/Deployment.md",
     "nodejs/learning/Testing & Debugging.md",
     "nodejs/learning/Communication.md",
-    "nodejs/learning/Databases.md",
-    "nodejs/learning/Applications.md",
-    "nodejs/learning/TypeScript.md",
-    "nodejs/learning/Core Modules.md",
-    "nodejs/learning/Module Basics.md",
     "research/CALM",
     "js/web-js/examples/animechan/anime-search.canvas",
     "js/web-js/examples/animechan/index.html",
