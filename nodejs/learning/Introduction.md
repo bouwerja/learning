@@ -322,3 +322,76 @@ fs.readFile('myfile.txt', 'utf8', (err, data) => {
 });  
 console.log('This runs before the file is read');
 ```
+
+---
+
+# Event Loop
+
+The **event loop** is what makes Node.js non-blocking and efficient.
+
+It handles asynchronous operations by delegating tasks to the system and processing their results through *callbacks*.
+
+## How the Event Loop works
+
+1. Execute the main script (synchronous code)
+2. Process any microtasks (Promises, `process.nextTick`)
+3. Execute timers (`setTimeout`, `setInterval`)
+4. Run I/O callbacks (file system, network operations)
+5. Process `setImmediate` callbacks
+6. Handle close events (like `scoket.on('close')`)
+
+### Example
+
+```js
+console.log("First");
+setTimeout(() => console.log("Third"), 0);
+Promise.resolve().then(() => console.log("Second"));
+console.log("Fourth");
+```
+
+This demonstrates the execution order:
+
+1. Sync code runs first ('First', 'Fourth')
+2. Microtasks (Promises) run before the next phase ('Second')
+3. Timers execute last ('Third')
+
+## Event Loop Phases
+
+The event loop processes different types of callbacks in this order:
+
+1. Timers: `setTimeout`, `setInterval`
+2. I/O Callbacks: Complete I/O operations
+3. Poll: Retrieve new I/O events
+4. Check: `setImmediate` callbacks
+5. Close: Cleanup callbacks (like: `socket.on("close")`)
+
+> Between each phase Node.js runs microtasks (Promises) and `process.nextTick` callbacks.
+
+```js
+console.log('1. Start');  
+  
+// Next tick queue  
+process.nextTick(() => console.log('2. Next tick'));  
+  
+// Microtask queue (Promise)  
+Promise.resolve().then(() => console.log('3. Promise'));  
+  
+// Timer phase  
+setTimeout(() => console.log('4. Timeout'), 0);  
+  
+// Check phase  
+setImmediate(() => console.log('5. Immediate'));  
+  
+console.log('6. End');
+```
+
+The output will be: 
+
+```text
+1. Start
+2. End
+3. Next tick
+4. Promise
+5. Timeout
+6. Immediate
+```
