@@ -114,12 +114,12 @@ flowchart TD
 1. **Future-State Options.** Draw up one or more design options per lever, within the constraints register.
 2. **Pre-Mortem Workshop (Bounded Inversion).** Ask: *"Using only these levers, within these constraints, how would this solution fail?"* The workshop uses the **failure prompts**, drawn from the original analysis canvas:
 
-   | Behavioural | System & Data | Operational |
-   | :-- | :-- | :-- |
-   | Out-of-Order Execution | Scale Extremes | External Interruptions |
-   | Misuse & Invalid Inputs | Null & Partial States | Idempotency & Retries |
-   | Race Conditions | Boundary Values | Error Visibility & Feedback |
-   | Permission Boundaries | | |
+| Behavioral              | System & Data         | Operational                 |
+| :---------------------- | --------------------- | --------------------------- |
+| Out-of-Order Execution  | Scale Extremes        | External Interruptions      |
+| Misuse & Invalid Inputs | Null & Partial States | Idempotency & Retries       |
+| Race Conditions         | Boundary Values       | Error Visibility & Feedback |
+| Permission Boundaries   |                       |                             |
 
 3. **Write Anti-Pattern Rules.** Each failure becomes a business rule, a non-functional requirement or an acceptance criterion. These rules also go to **Section 3A** for classification.
 4. **Specify the Solution.** Write user stories or functional requirements with acceptance criteria, per lever.
@@ -182,7 +182,7 @@ This section runs **alongside Stage 3**, so the design is approved with test evi
 
 **CALM lens: MEASURE the Signal Delta.** Prove the gap has closed with evidence. Never assume it from delivery alone.
 
-### Define the Success Signal (Signal Discovery mini workflow)
+### Define the Success Signal (Signal Discovery)
 
 1. **Anchor to the Target Gap.** The Stage 1 gap measure is the outcome signal. Record its current and desired values.
 2. **Trace the Lever Path.** For each top lever, walk from the lever to the first change it causes, then to the Target Gap measure. Find where the effect shows first.
@@ -214,11 +214,11 @@ This section runs **alongside Stage 3**, so the design is approved with test evi
 2. **Phased Rollout (Gradient).** Move from a pilot group to a wider group, then to full rollout, comparing the signal at each step.
 3. **Read the Signal.** Compare the result with the Target Gap baseline:
 
-   | Reading | Action |
-   | :-- | :-- |
-   | **Still improving** | Continue to the next rollout step. |
-   | **Plateau reached** | Lock the setting and baseline the new process. |
-   | **Degraded / no signal** | Adjust the lever, or return to **Stage 2**, or to **Stage 1** if the gap itself was wrong. |
+| Reading                  | Action                                                                                    |
+| :----------------------- | ----------------------------------------------------------------------------------------- |
+| **Still Impoving**       | Continue to the next rollout step.                                                        |
+| **Plateau Reached**      | Lock the setting and baseline the new process.                                            |
+| **Degraded / No signal** | Adjust the lever, or return to **Stage 2**, or to **Stage 1** if the gap itself was wrong |
 
 ### Reporting and close-out
 
