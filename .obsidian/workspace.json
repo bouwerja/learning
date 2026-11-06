@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "research/Business Analysis/README.md",
+                "file": "research/Business Analysis/examples/lead-to-sale-conversion/03A - Assurance.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "03A - Assurance"
             }
           }
         ]
@@ -192,6 +192,15 @@
   },
   "active": "73c9f3655d09a401",
   "lastOpenFiles": [
+    "research/Business Analysis/examples/lead-to-sale-conversion/README.md",
+    "research/Business Analysis/BA Process Guide.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/04 - Validate & Evaluate.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/03A - Assurance.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/02 - Analyse & Prioritise.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/03 - Design & De-risk.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/01 - Define the Problem.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/00 - Plan & Engage.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion",
     "research/Business Analysis/README.md",
     "research/Business Analysis/business analysis workflow.canvas",
     "research/Business Analysis/examples",
@@ -217,19 +226,11 @@
     "Docker/Node.js Guide.md",
     "Docker/PHP Guide.md",
     "Docker/Golang Guide.md",
-    "php/Laravel/Introduction.md",
     "php/Laravel",
-    "php/Introduction.md",
-    "golang/Introduction.md",
-    "Docker/Getting Started.md",
-    "nodejs/mvc/notes/NodeJS.md",
     "Docker",
-    "nodejs/learning/Hardware.md",
-    "nodejs/learning/Advanced.md",
     "research/CALM",
     "js/web-js/examples/animechan/anime-search.canvas",
     "js/web-js/examples/animechan/index.html",
-    "js/web-js/examples/animechan/script.js",
-    "js/web-js/examples/animechan"
+    "js/web-js/examples/animechan/script.js"
   ]
 }
