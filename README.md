@@ -1,5 +1,9 @@
 # 🚀 Multi-Language Polyglot Sandbox
 
+> [!NOTE]
+> [Useful repo for learning things](https://github.com/codecrafters-io/build-your-own-x)
+
+
 Welcome to my personal learning laboratory! This repository tracks my hands-on journey exploring multiple programming languages, frameworks, libraries, and design patterns. From backend APIs and full-stack web applications to data analysis notebooks and automation scripts, each directory represents deep dives into specific technologies and software engineering concepts.
 
 ## 💻 Current Project & Progress
