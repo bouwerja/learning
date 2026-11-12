@@ -8,44 +8,17 @@
         "type": "tabs",
         "children": [
           {
-<<<<<<< Updated upstream
-            "id": "495a0c99751fcaa3",
-=======
-            "id": "3eabde392ce21250",
->>>>>>> Stashed changes
+            "id": "73c9f3655d09a401",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "research/Black-Box/figuring-out-unfamiliar-systems-roadmap.md",
+                "file": "nodejs/mvc/notes/NodeJS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "figuring-out-unfamiliar-systems-roadmap"
-<<<<<<< Updated upstream
-=======
-            }
-          }
-        ]
-      },
-      {
-        "id": "58db84c99d8c569a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "bc962f7c7c4c7b4a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "research/Black-Box/Worked Example.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Worked Example"
->>>>>>> Stashed changes
+              "title": "NodeJS"
             }
           }
         ]
@@ -217,27 +190,33 @@
       "terminal:Open terminal": false
     }
   },
-<<<<<<< Updated upstream
   "active": "21e26744f54f9e46",
   "lastOpenFiles": [
-    "research/Black-Box/examples",
-    "research/Black-Box/figuring-out-unfamiliar-systems-roadmap.md",
-    "Untitled.md",
-=======
-  "active": "bc962f7c7c4c7b4a",
-  "lastOpenFiles": [
+    "research/Black-Box/newton-raphson method.md",
     "research/Black-Box/figuring-out-unfamiliar-systems-roadmap.md",
     "research/Black-Box/Worked Example.md",
-    "research/Black-Box/newton-raphson method.md",
-    "books/Numerical Analysis ( PDFDrive )-1.pdf",
-    "research/Black-Box/examples",
->>>>>>> Stashed changes
     "research/Black-Box/Black-Box System Deciphering Framework.md",
-    "statement.md",
     "research/Black-Box",
+    "README.md",
+    "nodejs/mvc/notes/Resources.md",
+    "nodejs/mvc/notes/NodeJS.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/00 - Plan & Engage.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/03A - Assurance.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/README.md",
     "research/Business Analysis/BA Process Guide.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/04 - Validate & Evaluate.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/02 - Analyse & Prioritise.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/03 - Design & De-risk.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion/01 - Define the Problem.md",
+    "research/Business Analysis/examples/lead-to-sale-conversion",
+    "research/Business Analysis/README.md",
     "research/Business Analysis/business analysis workflow.canvas",
+    "research/Business Analysis/examples",
     "research/Business Analysis/analysis workflow.canvas",
+    "research/CALM/README.md",
+    "research/Business Analysis/business analysis workflow (CALM).html",
+    "research/Business Analysis/analysis workflow - CALM rework.canvas",
+    "research/Business Analysis/analysis workflow - CALM rework.html",
     "nodejs/learning/Core Modules.md",
     "research/Business Analysis",
     "LICENSE.md",
@@ -248,29 +227,10 @@
     "nodejs/learning/Introduction.md",
     "Docker/Vue.js Guide.md",
     "js/vuejs/notes/Vue.js Documentation Summary.md",
-    "js/vuejs/learning-notes/basic-vuejs/essentials/createing-application.md",
-    "js/vuejs/learning-notes/basic-vuejs/essentials/reactivity.md",
-    "js/vuejs/learning-notes/basic-vuejs/essentials/tempalte-syntax.md",
-    "js/vuejs/learning-notes/vuetify/setup.md",
-    "Docker/Node.js Guide.md",
-    "Docker/PHP Guide.md",
-    "Docker/Golang Guide.md",
-    "php/Laravel/Introduction.md",
     "php/Laravel",
-    "php/Introduction.md",
-    "golang/Introduction.md",
-    "Docker/Getting Started.md",
     "Docker",
     "research/CALM",
     "js/web-js/examples/animechan/anime-search.canvas",
-    "js/web-js/examples/animechan/index.html",
-    "js/web-js/examples/animechan/script.js",
-<<<<<<< Updated upstream
-    "js/web-js/examples/animechan",
-    "research",
-    "js/web-js/examples/dates.html"
-=======
-    "js/web-js/examples/animechan"
->>>>>>> Stashed changes
+    "js/web-js/examples/animechan/index.html"
   ]
 }
