@@ -192,11 +192,14 @@
   },
   "active": "21e26744f54f9e46",
   "lastOpenFiles": [
+<<<<<<< Updated upstream
     "research/Black-Box/newton-raphson method.md",
     "research/Black-Box/figuring-out-unfamiliar-systems-roadmap.md",
     "research/Black-Box/Worked Example.md",
     "research/Black-Box/Black-Box System Deciphering Framework.md",
     "research/Black-Box",
+=======
+>>>>>>> Stashed changes
     "README.md",
     "nodejs/mvc/notes/Resources.md",
     "nodejs/mvc/notes/NodeJS.md",
@@ -227,6 +230,13 @@
     "nodejs/learning/Introduction.md",
     "Docker/Vue.js Guide.md",
     "js/vuejs/notes/Vue.js Documentation Summary.md",
+<<<<<<< Updated upstream
+=======
+    "js/vuejs/learning-notes/basic-vuejs/essentials/createing-application.md",
+    "js/vuejs/learning-notes/basic-vuejs/essentials/reactivity.md",
+    "js/vuejs/learning-notes/basic-vuejs/essentials/tempalte-syntax.md",
+    "js/vuejs/learning-notes/vuetify/setup.md",
+>>>>>>> Stashed changes
     "php/Laravel",
     "Docker",
     "research/CALM",
