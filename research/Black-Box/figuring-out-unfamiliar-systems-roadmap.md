@@ -236,8 +236,8 @@ Because the system behaves consistently, misses are not averaged. One miss means
 Keep one line per test.
 
 | Test | What I changed | My prediction | What happened | Hit or miss | What I learnt |
-| --- | --- | --- | --- | --- | --- |
-| 1 | | | | | |
+| ---- | -------------- | ------------- | ------------- | ----------- | ------------- |
+| 1    |                |               |               |             |               |
 
 #### The confidence ladder
 
